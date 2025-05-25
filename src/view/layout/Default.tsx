@@ -1,0 +1,29 @@
+import { Heart } from "lucide-react";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import { easterEggs } from "../../data/easterEggs";
+
+export function DefaultLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+      <div
+        id="hidden-heart-icon"
+        className="fixed bottom-10 right-2 opacity-10 hover:opacity-100 cursor-pointer transition-opacity"
+        onClick={() => {
+          const heartEgg = easterEggs.find((egg) => egg.id === "hidden-heart");
+          if (heartEgg) {
+            const event = new CustomEvent("eggFound", {
+              detail: { id: heartEgg.id, message: heartEgg.message },
+            });
+            window.dispatchEvent(event);
+          }
+        }}
+      >
+        <Heart className="w-6 h-6 text-pink-600" fill="pink" />
+      </div>
+    </>
+  );
+}
