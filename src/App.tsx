@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Countdown from "./components/Countdown";
 import AboutSection from "./components/AboutSection";
 import LettersSection from "./components/LettersSection";
-import EasterEggSection from "./components/EasterEggs";
 import LoadingPage from "./view/components/LoadingPage";
 import { DefaultLayout } from "./view/layout/Default";
 
@@ -25,7 +24,6 @@ function App() {
           <Countdown />
           <AboutSection />
           <LettersSection />
-          <EasterEggSection />
         </DefaultLayout>
       )}
     </div>
