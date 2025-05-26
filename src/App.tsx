@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import AboutSection from "./view/partials/about/AboutSection";
+import { About } from "./view/partials/about/AboutSection";
 import LoadingPage from "./view/components/LoadingPage";
 import { DefaultLayout } from "./view/layout/Default";
 import { Countdown } from "./view/partials/countdown/Countdown";
@@ -21,7 +21,7 @@ function App() {
       {!isLoading && (
         <DefaultLayout>
           <Countdown />
-          <AboutSection />
+          <About />
         </DefaultLayout>
       )}
     </div>
