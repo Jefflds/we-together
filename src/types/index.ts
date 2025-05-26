@@ -5,13 +5,6 @@ export interface CountdownTimeData {
   seconds: number;
 }
 
-export interface EasterEgg {
-  id: string;
-  hint: string;
-  message: string;
-  trigger: string;
-}
-
 export interface DailyLetter {
   day: number;
   date: string;
