@@ -56,17 +56,19 @@ const CountdownUnit: React.FC<{
   color?: string;
 }> = ({ value, label, color = "from-[#7d0039] to-[#fe016b]" }) => (
   <motion.div
-    className={`flex flex-col items-center rounded-lg shadow-lg px-4 py-3 w-20 md:w-28 
-                bg-gradient-to-br ${color} relative overflow-hidden`}
+    className={`flex flex-col items-center rounded-lg shadow-lg px-2 sm:px-3 md:px-4 py-2 md:py-3 
+                w-[70px] sm:w-20 md:w-24 lg:w-28 bg-gradient-to-br ${color} relative overflow-hidden`}
     whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 400, damping: 10 }}
   >
-    <span className="text-xl md:text-3xl font-bold text-white">
+    <span className="text-lg sm:text-xl md:text-3xl font-bold text-white">
       {value.toString().padStart(2, "0")}
     </span>
-    <span className="text-xs md:text-sm text-pink-100">{label}</span>
+    <span className="text-[10px] sm:text-xs md:text-sm text-pink-100">
+      {label}
+    </span>
     <div className="absolute -right-2 -bottom-2 opacity-10">
-      <Scale className="w-12 h-12 text-white" />
+      <Scale className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 text-white" />
     </div>
   </motion.div>
 );
@@ -112,43 +114,45 @@ export function Countdown() {
   return (
     <section
       id="countdown"
-      className="py-16 bg-gradient-to-b from-[#400020] to-[#2d0019] text-white"
+      className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-[#400020] to-[#2d0019] text-white"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3 sm:px-4">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-block bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-3 rounded-full mb-4 relative">
-            <Heart className="w-8 h-8 text-white" fill="white" />
+          <div className="inline-block bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-2 sm:p-3 rounded-full mb-3 sm:mb-4 relative">
+            <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="white" />
             <motion.div
               className="absolute -top-1 -right-1"
               animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Sparkles className="w-5 h-5 text-yellow-300" />
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
             </motion.div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-pink-200 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pink-200 mb-3 sm:mb-4">
             Contagem para Nosso Dia Especial
           </h2>
 
-          <div className="flex flex-wrap justify-center items-center gap-2 text-pink-300 text-lg mb-4">
-            <Clock className="inline-block w-5 h-5" />
+          <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2 text-pink-300 text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
+            <Clock className="inline-block w-4 h-4 sm:w-5 sm:h-5" />
             <span>12 de Junho de 2025</span>
-            <span className="mx-2 text-pink-400">|</span>
+            <span className="mx-1 sm:mx-2 text-pink-400">|</span>
             <div className="flex items-center">
-              <span className="text-xl mr-2">{valentinesZodiac.symbol}</span>
+              <span className="text-lg sm:text-xl mr-1 sm:mr-2">
+                {valentinesZodiac.symbol}
+              </span>
               <span>{valentinesZodiac.sign}</span>
             </div>
           </div>
 
-          <div className="bg-[#7d0039]/20 backdrop-blur-sm rounded-lg p-3 inline-block text-pink-200 text-sm font-medium mb-8 border-l-4 border-[#fe016b] shadow-lg shadow-pink-900/20">
+          <div className="bg-[#7d0039]/20 backdrop-blur-sm rounded-lg p-2 sm:p-3 inline-block text-pink-200 text-xs sm:text-sm font-medium mb-6 sm:mb-8 border-l-4 border-[#fe016b] shadow-lg shadow-pink-900/20">
             <div className="flex items-center">
-              <Scale className="w-4 h-4 mr-2" />
+              <Scale className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               <AnimatePresence mode="wait">
                 <motion.span
                   key={legalTermIndex}
@@ -163,8 +167,7 @@ export function Countdown() {
             </div>
           </div>
         </motion.div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-2xl mx-auto mb-12">
+        <div className="grid grid-cols-2 gap-2 xs:grid-cols-4 sm:gap-3 md:gap-4 max-w-xs xs:max-w-md sm:max-w-xl md:max-w-2xl mx-auto mb-8 sm:mb-12">
           <CountdownUnit value={timeUntilValentines.days} label="Dias" />
           <CountdownUnit
             value={timeUntilValentines.hours}
@@ -183,57 +186,57 @@ export function Countdown() {
           />
         </div>
 
-        <div className="flex items-center justify-center mb-12 relative">
+        <div className="flex items-center justify-center mb-8 sm:mb-12 relative">
           <div className="h-px bg-gradient-to-r from-transparent via-pink-500/30 to-transparent w-full max-w-xs"></div>
 
-          <div className="absolute bg-[#300018] p-2 rounded-full">
+          <div className="absolute bg-[#300018] p-1 sm:p-2 rounded-full">
             <motion.div
-              className="bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-3 rounded-full"
+              className="bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-2 sm:p-3 rounded-full"
               animate={{
                 rotate: [0, 10, 0, -10, 0],
                 scale: [1, 1.05, 1, 1.05, 1],
               }}
               transition={{ duration: 10, repeat: Infinity }}
             >
-              <Gavel className="w-6 h-6 text-white" />
+              <Gavel className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </motion.div>
           </div>
         </div>
 
         <motion.div
-          className="text-center mb-8"
+          className="text-center mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <div className="inline-flex items-center space-x-2 mb-4">
-            <div className="bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-2 rounded-full">
-              <Calendar className="w-6 h-6 text-white" />
+          <div className="inline-flex items-center space-x-1 sm:space-x-2 mb-3 sm:mb-4">
+            <div className="bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-1.5 sm:p-2 rounded-full">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <div className="text-3xl">{birthdayZodiac.symbol}</div>
+            <div className="text-2xl sm:text-3xl">{birthdayZodiac.symbol}</div>
           </div>
 
-          <h3 className="text-xl md:text-2xl font-semibold text-pink-200 mb-3">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-pink-200 mb-2 sm:mb-3">
             Data Especial: Seu Aniversário
           </h3>
 
-          <div className="flex flex-wrap justify-center items-center gap-2 text-pink-300 mb-6">
+          <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2 text-pink-300 text-sm sm:text-base mb-4 sm:mb-6">
             <span>04 de Outubro</span>
-            <span className="mx-2 text-pink-400">|</span>
-            <div className="flex items-center">
+            <span className="mx-1 sm:mx-2 text-pink-400">|</span>
+            <div className="flex flex-wrap items-center justify-center">
               <span>{birthdayZodiac.sign}</span>
-              <div className="ml-2 text-xs px-2 py-1 rounded-full bg-[#7d0039]/40 text-pink-200">
+              <div className="ml-1 mt-1 sm:ml-2 sm:mt-0 text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-[#7d0039]/40 text-pink-200">
                 Elemento: {birthdayZodiac.element}
               </div>
             </div>
           </div>
 
-          <div className="bg-[#7d0039]/30 backdrop-blur-sm border border-pink-800/30 p-4 rounded-lg max-w-xl mx-auto mb-6 shadow-lg shadow-pink-900/10">
+          <div className="bg-[#7d0039]/30 backdrop-blur-sm border border-pink-800/30 p-3 sm:p-4 rounded-lg max-w-xs sm:max-w-sm md:max-w-xl mx-auto mb-5 sm:mb-6 shadow-lg shadow-pink-900/10">
             <div className="flex items-start">
-              <div className="mr-3">
-                <BookOpen className="w-6 h-6 text-pink-300" />
+              <div className="mr-2 sm:mr-3 shrink-0">
+                <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-pink-300" />
               </div>
-              <div className="text-left text-sm text-pink-100">
+              <div className="text-left text-xs sm:text-sm text-pink-100">
                 <p className="font-semibold text-pink-200 mb-1">
                   Intimação Especial
                 </p>
@@ -247,8 +250,7 @@ export function Countdown() {
             </div>
           </div>
         </motion.div>
-
-        <div className="flex justify-center space-x-3 md:space-x-4">
+        <div className="flex justify-center space-x-2 sm:space-x-3 md:space-x-4">
           <CountdownUnit
             value={timeUntilBirthday.days}
             label="Dias"
@@ -260,15 +262,14 @@ export function Countdown() {
             color="from-[#7d0039] to-[#fe016b]"
           />
         </div>
-
-        <div className="relative h-20 mt-10">
+        <div className="relative h-12 sm:h-16 md:h-20 mt-6 sm:mt-10">
           {starPositions.map((pos, i) => (
             <motion.div
               key={i}
               className="absolute"
               style={{
                 left: pos.left,
-                top: pos.top,
+                top: `${Math.min(parseInt(pos.top), 80)}%`,
               }}
               animate={{
                 opacity: [0.3, 0.7, 0.3],
@@ -280,7 +281,10 @@ export function Countdown() {
                 delay: pos.delay,
               }}
             >
-              <Star className="w-4 h-4 text-pink-300" fill="#ffc0cb" />
+              <Star
+                className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300"
+                fill="#ffc0cb"
+              />
             </motion.div>
           ))}
 
@@ -289,7 +293,7 @@ export function Countdown() {
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           >
-            <SquareAsterisk className="w-8 h-8 text-pink-500 opacity-20" />
+            <SquareAsterisk className="w-6 h-6 sm:w-8 sm:h-8 text-pink-500 opacity-20" />
           </motion.div>
         </div>
       </div>
