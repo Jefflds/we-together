@@ -4,7 +4,6 @@ import { CountdownTimeData } from '../types';
 const calculateTimeLeft = (targetDate: Date): CountdownTimeData => {
   const difference = targetDate.getTime() - new Date().getTime();
   
-  // Return all zeros if the date has passed
   if (difference <= 0) {
     return {
       days: 0,
