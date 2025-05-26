@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Countdown from "./components/Countdown";
+import { Countdown } from "./components/Countdown";
 import AboutSection from "./components/AboutSection";
 import LettersSection from "./components/LettersSection";
 import LoadingPage from "./view/components/LoadingPage";
