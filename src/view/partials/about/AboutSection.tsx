@@ -442,24 +442,6 @@ export function About() {
                     e criatividade, ele traz alegria e novas perspectivas para
                     cada momento.
                   </p>
-
-                  <div className="grid grid-cols-2 gap-4 mt-6">
-                    <div className="bg-pink-50 p-4 rounded-lg">
-                      <Coffee className="w-5 h-5 text-[#fe016b] mb-2" />
-                      <h4 className="font-medium text-[#7d0039]">Favoritos</h4>
-                      <p className="text-sm text-gray-600">
-                        Adicione seus gostos favoritos aqui
-                      </p>
-                    </div>
-
-                    <div className="bg-pink-50 p-4 rounded-lg">
-                      <Music className="w-5 h-5 text-[#fe016b] mb-2" />
-                      <h4 className="font-medium text-[#7d0039]">Músicas</h4>
-                      <p className="text-sm text-gray-600">
-                        As músicas que ele mais ama
-                      </p>
-                    </div>
-                  </div>
                 </motion.div>
               </div>
             )}
