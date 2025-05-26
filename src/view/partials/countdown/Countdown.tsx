@@ -1,6 +1,4 @@
 import { useEffect, useState, useMemo } from "react";
-import { useCountdown } from "../hooks/useCountdown";
-import { getNextOccurrence } from "../utils/dateUtils";
 import {
   Heart,
   Clock,
@@ -13,6 +11,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCountdown } from "./useCountdown";
+import { getNextOccurrence } from "../../../utils/dateUtils";
 
 const getZodiacSign = (month: number, day: number) => {
   if ((month === 3 && day >= 21) || (month === 4 && day <= 19))
