@@ -1,6 +1,6 @@
 import { Heart } from "lucide-react";
 import Footer from "../../components/Footer";
-import Header from "./header/Header";
+import { Header } from "./header/Header";
 import { easterEggs } from "../../data/easterEggs";
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
