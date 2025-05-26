@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Countdown } from "./components/Countdown";
-import AboutSection from "./components/AboutSection";
+import { About } from "./view/partials/about/AboutSection";
 import LoadingPage from "./view/components/LoadingPage";
 import { DefaultLayout } from "./view/layout/Default";
+import { Countdown } from "./view/partials/countdown/Countdown";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ function App() {
       {!isLoading && (
         <DefaultLayout>
           <Countdown />
-          <AboutSection />
+          <About />
         </DefaultLayout>
       )}
     </div>
