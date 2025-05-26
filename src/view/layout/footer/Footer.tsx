@@ -1,15 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Heart,
-  Star,
-  Sparkles,
-  Calendar,
-  Mail,
-  Music,
-  Coffee,
-  Instagram,
-  Clock,
-} from "lucide-react";
+import { Heart, Star, Sparkles, Calendar, Music, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Footer() {
@@ -104,7 +94,7 @@ export function Footer() {
             <div className="flex space-x-3 text-pink-300/70 text-sm">
               <div className="flex items-center">
                 <Calendar className="w-3.5 h-3.5 mr-1" />
-                <span>Est. 2023</span>
+                <span>Mai. 2025</span>
               </div>
               <span>•</span>
               <div className="flex items-center">
@@ -177,34 +167,6 @@ export function Footer() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
-          </div>
-          <div className="flex flex-col items-center md:items-end">
-            <h3 className="text-lg font-semibold mb-4 text-pink-200">
-              Contato
-            </h3>
-            <div className="space-y-3">
-              <a
-                href="mailto:nossoamor@forever.com"
-                className="flex items-center text-pink-200/70 hover:text-[#fe016b] transition-colors group"
-              >
-                <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                <span>nossoamor@forever.com</span>
-              </a>
-              <a
-                href="https://instagram.com/jeffemanu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center text-pink-200/70 hover:text-[#fe016b] transition-colors group"
-              >
-                <Instagram className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                <span>@jeffemanu</span>
-              </a>
-
-              <div className="flex items-center space-x-2 mt-4 pt-2 border-t border-pink-900/30 text-sm text-pink-300/50">
-                <Coffee className="w-3 h-3" />
-                <span>Feito com amor</span>
-              </div>
             </div>
           </div>
         </div>
