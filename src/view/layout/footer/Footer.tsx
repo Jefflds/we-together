@@ -126,15 +126,6 @@ export function Footer() {
                   <span>Sobre Nós</span>
                 </a>
               </li>
-              <li>
-                <a
-                  href="#letters"
-                  className="hover:text-[#fe016b] transition-colors flex items-center justify-center md:justify-start"
-                >
-                  <Heart className="w-4 h-4 mr-2" />
-                  <span>Cartas e Presentes</span>
-                </a>
-              </li>
             </ul>
 
             <div className="mt-6 relative">
