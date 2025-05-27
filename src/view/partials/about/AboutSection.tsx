@@ -265,7 +265,6 @@ export function About() {
                       </h4>
                       <ul className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2 space-y-0.5 sm:space-y-1">
                         <li className="flex items-center">
-                          s
                           <span className="w-1.5 h-1.5 bg-[#fe016b]/80 rounded-full mr-2"></span>
                           Mc Donalds - Quarteirão
                         </li>
