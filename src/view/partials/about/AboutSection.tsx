@@ -123,7 +123,7 @@ export function About() {
 
   return (
     <section
-      id="about-section"
+      id="about"
       className="py-20 relative overflow-hidden bg-gradient-to-b from-[#fff0f5] to-[#ffcfe0]"
     >
       <div className="absolute inset-0 overflow-hidden z-0">
@@ -265,7 +265,6 @@ export function About() {
                       </h4>
                       <ul className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2 space-y-0.5 sm:space-y-1">
                         <li className="flex items-center">
-                          s
                           <span className="w-1.5 h-1.5 bg-[#fe016b]/80 rounded-full mr-2"></span>
                           Mc Donalds - Quarteirão
                         </li>
@@ -472,10 +471,16 @@ export function About() {
                         className="absolute inset-0 w-full h-full object-cover"
                         controls
                         preload="metadata"
+                        playsInline
                         muted
-                        onClick={(e) => e.currentTarget.play()}
+                        controlsList="nodownload"
+                        onContextMenu={(e) => e.preventDefault()}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#7d0039]/60 to-transparent z-10 flex items-center justify-center opacity-70 hover:opacity-90 transition-opacity">
+
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-[#7d0039]/60 to-transparent z-10 
+                          flex items-center justify-center opacity-90 hover:opacity-0 transition-opacity pointer-events-none"
+                      >
                         <div className="p-3 rounded-full bg-white/30 backdrop-blur-sm">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

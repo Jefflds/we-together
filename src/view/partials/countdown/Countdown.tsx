@@ -57,18 +57,18 @@ const CountdownUnit: React.FC<{
 }> = ({ value, label, color = "from-[#7d0039] to-[#fe016b]" }) => (
   <motion.div
     className={`flex flex-col items-center rounded-lg shadow-lg px-1.5 xs:px-2 sm:px-3 md:px-4 py-1.5 xs:py-2 md:py-3 
-                w-[60px] xs:w-[70px] sm:w-20 md:w-24 lg:w-28 bg-gradient-to-br ${color} relative overflow-hidden`}
+                min-w-[52px] xs:min-w-[60px] sm:min-w-[70px] md:min-w-[80px] bg-gradient-to-br ${color} relative overflow-hidden flex-shrink-0`}
     whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 400, damping: 10 }}
   >
-    <span className="text-base xs:text-lg sm:text-xl md:text-3xl font-bold text-white">
+    <span className="text-sm xs:text-base sm:text-xl md:text-3xl font-bold text-white">
       {value.toString().padStart(2, "0")}
     </span>
-    <span className="text-[9px] xs:text-[10px] sm:text-xs md:text-sm text-pink-100">
+    <span className="text-[8px] xs:text-[9px] sm:text-xs md:text-sm text-pink-100 whitespace-nowrap">
       {label}
     </span>
     <div className="absolute -right-2 -bottom-2 opacity-10">
-      <Scale className="w-6 xs:w-8 sm:w-10 md:w-12 h-6 xs:h-8 sm:h-10 md:h-12 text-white" />
+      <Scale className="w-5 xs:w-6 sm:w-8 md:w-10 h-5 xs:h-6 sm:h-8 md:h-10 text-white" />
     </div>
   </motion.div>
 );
@@ -171,10 +171,7 @@ export function Countdown() {
             </div>
           </div>
         </motion.div>
-        <div
-          className="grid grid-cols-2 xs:grid-cols-4 gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 
-              max-w-[270px] xs:max-w-md sm:max-w-xl md:max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-12"
-        >
+        <div className="flex justify-center flex-nowrap gap-1 xs:gap-1.5 sm:gap-3 md:gap-4 w-full max-w-md sm:max-w-xl md:max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-12 overflow-x-auto px-1">
           <CountdownUnit value={timeUntilValentines.days} label="Dias" />
           <CountdownUnit
             value={timeUntilValentines.hours}

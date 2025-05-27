@@ -59,7 +59,6 @@ export function Header() {
   const navLinks = [
     { href: "#countdown", label: "Contagem Regressiva" },
     { href: "#about", label: "Sobre Você" },
-    { href: "#letters", label: "Cartas e Presentes" },
   ];
 
   const legalIcons = [
