@@ -123,7 +123,7 @@ export function About() {
 
   return (
     <section
-      id="about-section"
+      id="about"
       className="py-20 relative overflow-hidden bg-gradient-to-b from-[#fff0f5] to-[#ffcfe0]"
     >
       <div className="absolute inset-0 overflow-hidden z-0">
