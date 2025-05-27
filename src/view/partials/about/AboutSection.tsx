@@ -471,10 +471,16 @@ export function About() {
                         className="absolute inset-0 w-full h-full object-cover"
                         controls
                         preload="metadata"
+                        playsInline
                         muted
-                        onClick={(e) => e.currentTarget.play()}
+                        controlsList="nodownload"
+                        onContextMenu={(e) => e.preventDefault()}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#7d0039]/60 to-transparent z-10 flex items-center justify-center opacity-70 hover:opacity-90 transition-opacity">
+
+                      <div
+                        className="absolute inset-0 bg-gradient-to-t from-[#7d0039]/60 to-transparent z-10 
+                          flex items-center justify-center opacity-90 hover:opacity-0 transition-opacity pointer-events-none"
+                      >
                         <div className="p-3 rounded-full bg-white/30 backdrop-blur-sm">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
