@@ -16,6 +16,8 @@ export function GrandmothersTributePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     setIsVisible(true);
     document.title = "Homenagem às Queridas Avós | Jeff & Manu ❤️";
   }, []);
