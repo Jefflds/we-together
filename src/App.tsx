@@ -1,8 +1,21 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { About } from "./view/partials/about/AboutSection";
 import LoadingPage from "./view/components/LoadingPage";
 import { DefaultLayout } from "./view/layout/Default";
 import { Countdown } from "./view/partials/countdown/Countdown";
+import { GrandmothersSection } from "./view/partials/grandmothers/GrandmothersSection";
+import { GrandmothersTributePage } from "./view/pages/GrandmothersTributePage";
+
+function HomePage() {
+  return (
+    <>
+      <Countdown />
+      <About />
+      <GrandmothersSection />
+    </>
+  );
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,10 +32,20 @@ function App() {
     <div className="min-h-screen bg-pink-50">
       {isLoading && <LoadingPage onLoadingComplete={handleLoadingComplete} />}
       {!isLoading && (
-        <DefaultLayout>
-          <Countdown />
-          <About />
-        </DefaultLayout>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <DefaultLayout>
+                <HomePage />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="/homenagem-vovos"
+            element={<GrandmothersTributePage />}
+          />
+        </Routes>
       )}
     </div>
   );
