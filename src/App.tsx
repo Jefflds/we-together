@@ -8,6 +8,7 @@ import { GrandmothersSection } from "./view/partials/grandmothers/GrandmothersSe
 import { LettersSection } from "./view/partials/letters/LettersSection";
 import { GrandmothersTributePage } from "./view/pages/GrandmothersTributePage";
 import { LetterPage } from "./view/pages/LetterPage";
+import { TimelinePage } from "./view/pages/TimelinePage";
 
 function HomePage() {
   return (
@@ -49,6 +50,7 @@ function App() {
             element={<GrandmothersTributePage />}
           />
           <Route path="/carta/:letterId" element={<LetterPage />} />
+          <Route path="/nossa-trajetoria" element={<TimelinePage />} />
         </Routes>
       )}
     </div>
