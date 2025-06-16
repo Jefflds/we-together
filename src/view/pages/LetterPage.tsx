@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { ArrowLeft, Heart, Calendar, Quote } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowLeft, Heart } from "lucide-react";
 
 export function LetterPage() {
   const navigate = useNavigate();
@@ -44,22 +44,50 @@ Eu te amo, doutora.
 Com todo meu amor e admiração,
 Jeff ❤️`,
     },
+
+    "pedido-de-desculpas": {
+      title: "Do fundo do meu coração",
+      date: "16 de Junho, 2025",
+      content: `Meu amor,
+
+Eu queria te pedir um tempo pra falar do fundo do coração. Não é fácil pra mim reconhecer quando erro, mas hoje, mais do que nunca, eu preciso fazer isso. Preciso te pedir desculpas — sinceras, profundas, com total consciência de tudo o que estou sentindo e do que te fiz sentir.
+
+Eu percebi que estou deixando os meus sentimentos falarem mais alto do que o cuidado e o respeito que eu tenho por você. Tô me deixando levar por inseguranças que nem sempre têm a ver com você, mas que acabam recaindo sobre nós. E isso te sufoca. Isso te pesa. E isso, sinceramente, me machuca também, porque eu nunca quis ser esse peso pra ti.
+
+Quando eu te perguntei se você sentia que eu estava te sufocando, e você respondeu que sim... aquilo me bateu forte. Porque eu sei que não é assim que se constrói algo bom, leve, duradouro. Não é com controle, com ansiedade, com medo. É com confiança, parceria, espaço, equilíbrio. E eu falhei nisso.
+
+Você é uma mulher livre, forte, carinhosa, intensa — e eu deveria estar ao seu lado como alguém que fortalece isso, e não como alguém que te prende. Eu tô trazendo pra nossa relação fantasmas de experiências passadas que não têm lugar aqui. E isso é injusto com você. Com o que estamos tentando construir.
+
+A verdade é que eu gosto muito de você. E talvez seja justamente por isso que eu tenha agido errado: querendo proteger o que ainda tá sendo formado, eu acabei pressionando. Só que amor não é sobre cercar, é sobre cuidar. E cuidar também é saber dar espaço, é confiar, é respeitar o silêncio, o tempo, o jeito de cada um.
+
+Eu não quero que você se sinta sobrecarregada. Muito menos sozinha dentro de algo que deveria te fazer bem. O que eu mais quero agora é aprender — aprender a ser mais leve, mais parceiro, mais presente do jeito certo. Quero trabalhar em mim essas inseguranças que não têm nada a ver com você, mas que te afetam. E eu não quero mais isso.
+
+Você não tem obrigação de aguentar os meus medos, mas ainda assim, obrigada por ter sido honesta comigo. Obrigada por não ter fingido que estava tudo bem. Só pessoas verdadeiras fazem isso — e eu admiro ainda mais você por isso.
+
+Não tô aqui te pedindo pra esquecer o que aconteceu, mas sim pra confiar que eu entendi. E que eu quero mudar. Por mim, por você, por nós. Quero que a gente possa caminhar junto com mais leveza, com mais compreensão, com mais liberdade — sem perder o cuidado, o carinho, a parceria.
+
+Desculpa de verdade se eu te fiz sentir sufocada, pesada, triste... Eu prometo que vou trabalhar em mim pra que isso não se repita. E espero que a gente ainda consiga construir algo bonito, com respeito, com espaço, e com muito amor.
+
+Com carinho e sinceridade,
+Jeff ❤️`,
+    },
   };
 
   const currentLetter = letterData[letterId as keyof typeof letterData];
 
   if (!currentLetter) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#fff5f8] to-[#ffcfe0] flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-[#7d0039] mb-4">
+          <p className="text-2xl font-bold text-gray-700 mb-4">
             Carta não encontrada
-          </h1>
+          </p>
           <button
             onClick={() => navigate("/")}
-            className="text-[#fe016b] hover:underline"
+            className="flex items-center justify-center space-x-2 bg-[#7d0039] text-white px-4 py-2 rounded-full transition-transform hover:scale-105"
           >
-            Voltar para início
+            <ArrowLeft className="w-5 h-5" />
+            <span>Voltar</span>
           </button>
         </div>
       </div>
@@ -67,109 +95,45 @@ Jeff ❤️`,
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#fff5f8] via-[#ffcfe0] to-[#f8f4ff]">
-      <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-pink-200/30">
-        <div className="container mx-auto px-4 py-4">
-          <button
-            onClick={() => navigate("/")}
-            className="flex items-center text-[#7d0039] hover:text-[#fe016b] transition-colors group"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-            <span className="font-medium">Voltar para início</span>
-          </button>
-        </div>
-      </div>
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
-        <motion.div
-          className="max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+    <div className="min-h-screen bg-gradient-to-b from-[#fff5f8] via-[#ffcfe0] to-[#f8f4ff] py-8 px-4">
+      <div className="max-w-3xl mx-auto">
+        <button
+          onClick={() => navigate("/")}
+          className="flex items-center text-[#7d0039] hover:text-[#fe016b] transition-colors mb-6 group"
         >
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden mb-8">
-            <div className="bg-gradient-to-r from-[#7d0039] to-[#fe016b] p-8 sm:p-12 text-white relative overflow-hidden">
-              <div className="absolute top-4 right-4">
-                <Heart className="w-8 h-8 text-white/30" fill="currentColor" />
-              </div>
-              <div className="absolute -top-8 -left-8 w-32 h-32 bg-white/5 rounded-full"></div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 rounded-full"></div>
+          <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <span className="font-medium">Voltar para início</span>
+        </button>
 
-              <div className="relative z-10">
-                <motion.div
-                  className="flex items-center mb-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  <span className="text-pink-100">{currentLetter.date}</span>
-                </motion.div>
+        <motion.div
+          className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl border border-pink-100/50 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#7d0039] via-[#fe016b] to-[#7d0039]"></div>
 
-                <motion.h1
-                  className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  {currentLetter.title}
-                </motion.h1>
-              </div>
+          <div className="absolute top-4 right-4 opacity-20">
+            <Heart className="w-12 h-12 text-[#fe016b]" fill="currentColor" />
+          </div>
+          <div className="relative z-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#7d0039] mb-3">
+              {currentLetter.title}
+            </h1>
+
+            <div className="flex items-center mb-6">
+              <time className="text-sm text-gray-500">
+                {currentLetter.date}
+              </time>
             </div>
-            <div className="p-8 sm:p-12">
-              <motion.div
-                className="prose prose-lg max-w-none"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 1 }}
-              >
-                <div className="text-6xl text-[#fe016b]/20 mb-6 leading-none">
-                  <Quote className="w-16 h-16" />
-                </div>
 
-                <div className="text-gray-700 leading-relaxed text-base sm:text-lg whitespace-pre-line">
-                  {currentLetter.content}
-                </div>
-              </motion.div>
+            <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+              <div className="whitespace-pre-line text-gray-700 leading-relaxed">
+                {currentLetter.content}
+              </div>
             </div>
           </div>
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-          >
-            <div className="inline-flex items-center space-x-4 bg-white/60 backdrop-blur-sm rounded-full px-8 py-4 shadow-lg">
-              <Heart className="w-6 h-6 text-[#fe016b]" fill="currentColor" />
-              <span className="text-[#7d0039] font-medium">
-                Escrito com amor
-              </span>
-              <Heart className="w-6 h-6 text-[#fe016b]" fill="currentColor" />
-            </div>
-          </motion.div>
         </motion.div>
-      </div>
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-pink-200/20"
-            style={{
-              width: Math.random() * 8 + 4,
-              height: Math.random() * 8 + 4,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: Math.random() * 4 + 6,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
       </div>
     </div>
   );
