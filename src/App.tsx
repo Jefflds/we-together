@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { About } from "./view/partials/about/AboutSection";
-import LoadingPage from "./view/components/LoadingPage";
 import { DefaultLayout } from "./view/layout/Default";
 import { Countdown } from "./view/partials/countdown/Countdown";
+import { About } from "./view/partials/about/AboutSection";
 import { GrandmothersSection } from "./view/partials/grandmothers/GrandmothersSection";
 import { LettersSection } from "./view/partials/letters/LettersSection";
+import { OurDaySection } from "./view/partials/ourday/OurDaySection";
 import { GrandmothersTributePage } from "./view/pages/GrandmothersTributePage";
 import { LetterPage } from "./view/pages/LetterPage";
 import { TimelinePage } from "./view/pages/TimelinePage";
+import LoadingPage from "./view/components/LoadingPage";
 
 function HomePage() {
   return (
     <>
       <Countdown />
+      <OurDaySection />
       <About />
       <LettersSection />
       <GrandmothersSection />
